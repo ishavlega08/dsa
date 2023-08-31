@@ -7,33 +7,51 @@ int main()
     int n;
     cin>>n;
 
-    cout<<"Fancy Pattern"<<endl;
-    // 1
-    // 2*2
-    // 3*3*3
-    // 4*4*4*4
-    // 4*4*4*4
-    // 3*3*3
-    // 2*2
-    // 1
+    cout<<"Alphabet Palindrome Pyramid"<<endl;
     for(int row=0; row<n; row++){
+
         for(int col=0; col<row+1; col++){
-            cout<<row+1;
-            if(col!=row){ //not a last character
-                cout<<"*";
-            } 
+            int ans = col+1;
+            char ch = ans+'A'-1;
+            cout<<ch;
+        }
+
+        // reverse counting printing
+        for(int col=row; col>=1; col--){
+            int ans = col;
+            char ch = ans+'A'-1;
+            cout<<ch;
         }
         cout<<endl;
     }
-    for(int row=0; row<n; row++){
-        for(int col=0; col<n-row; col++){
-            cout<<n-row;
-            if(col!=n-row-1){
-                cout<<"*";
-            }
-        }
-        cout<<endl;
-    }
+
+    // cout<<"Fancy Pattern"<<endl;
+    // 1
+    // 2*2
+    // 3*3*3
+    // 4*4*4*4
+    // 4*4*4*4
+    // 3*3*3
+    // 2*2
+    // 1
+    // for(int row=0; row<n; row++){
+    //     for(int col=0; col<row+1; col++){
+    //         cout<<row+1;
+    //         if(col!=row){ //not a last character
+    //             cout<<"*";
+    //         } 
+    //     }
+    //     cout<<endl;
+    // }
+    // for(int row=0; row<n; row++){
+    //     for(int col=0; col<n-row; col++){
+    //         cout<<n-row;
+    //         if(col!=n-row-1){
+    //             cout<<"*";
+    //         }
+    //     }
+    //     cout<<endl;
+    // }
 
     // cout<<"Flipped Solid Diamond"<<endl;
     // for(int row=0; row<n; row++){
