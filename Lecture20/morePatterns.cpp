@@ -7,23 +7,92 @@ int main()
     int n;
     cin>>n;
 
-    cout<<"Alphabet Palindrome Pyramid"<<endl;
+    // hollow full pyramid
     for(int row=0; row<n; row++){
-
-        for(int col=0; col<row+1; col++){
-            int ans = col+1;
-            char ch = ans+'A'-1;
-            cout<<ch;
+        // spaces
+        for(int col=0; col<n-row-1; col++){
+            cout<<" ";
         }
 
-        // reverse counting printing
-        for(int col=row; col>=1; col--){
-            int ans = col;
-            char ch = ans+'A'-1;
-            cout<<ch;
+        // numbers with spaces int between
+        int start = 1;
+        for(int col=0; col<2*row+1; col++){
+            // first row or last row
+            if(row==0 || row==n-1){
+                if(col%2==0){
+                    // even
+                    cout<<start;
+                    start++;
+                }
+                else{
+                    cout<<" ";
+                }
+            }
+            else{
+                // first col
+                if(col==0){
+                    cout<<1;
+                }
+                else if(col==2*row){
+                    cout<<row+1;
+                }
+                else{
+                    cout<<" ";
+                }
+
+            }
         }
         cout<<endl;
     }
+
+    // for(int row=0; row<n; row++){
+    //     // spaces
+    //     for(int col=0; col<n-row-1; col++){
+    //         cout<<" ";
+    //     }
+
+    //     // numbers
+    //     for(int col=0; col<row+1; col++){
+    //         cout<<row+col+1;
+    //     }
+
+    //     // reverse counting
+    //     int start = 2*row;
+    //     for(int col=0; col<row; col++){
+    //         cout<<start;
+    //         start--;
+    //     }
+
+    //     cout<<endl;
+    // }
+
+    // for(int row=0; row<n; row++){
+
+    //     // row+1 element pritn krne wale hai
+    //     int start = row+1;
+    //     for(int col=0; col<row+1; col++){
+    //         cout<<start<<" ";
+    //         start=start+1;
+    //     }cout<<endl;
+    // }
+
+    // cout<<"Alphabet Palindrome Pyramid"<<endl;
+    // for(int row=0; row<n; row++){
+
+    //     for(int col=0; col<row+1; col++){
+    //         int ans = col+1;
+    //         char ch = ans+'A'-1;
+    //         cout<<ch;
+    //     }
+
+    //     // reverse counting printing
+    //     for(int col=row; col>=1; col--){
+    //         int ans = col;
+    //         char ch = ans+'A'-1;
+    //         cout<<ch;
+    //     }
+    //     cout<<endl;
+    // }
 
     // cout<<"Fancy Pattern"<<endl;
     // 1
