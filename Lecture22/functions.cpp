@@ -88,15 +88,99 @@ int evenSum(int n){
     return sum;
 }
 
+double areaCircle(int rad){
+
+    const double PI = 3.14;
+
+    double area = PI*rad*rad;
+    return area;
+}
+
+bool evenOdd(int num){
+    if(num%2==0){
+        return 1;
+    }
+    return 0;
+}
+
+int factorial(int num){
+    cout<<num<<endl;
+    int fact = 1;
+
+    for(int i=1; i<=num; i++){
+        fact*=i;
+    }
+
+    return fact;
+}
+
+bool isPrime(int num){
+    if(num==0 || num==1){
+        return 0;
+    }
+
+    for(int i=2; i<num; i++){
+        if(num%i==0){
+            return 0;
+        }
+    }
+    return 1;
+}
 int main(){
 
-    // ---------------- sum of even numbers till N --------
+    // ---------------- print all prime nos from 1 to N ---------------
     int n;
-    cout<<"Enter the value of n: ";
+    cout<<"Enter a number: ";
     cin>>n;
 
-    int ans = evenSum(n);
-    cout<<"Even sum is "<<ans<<endl;
+    for(int i=1; i<=n; i++){
+        if(isPrime(i))
+            cout<<i<<" ";
+    }
+
+    // ---------------- num is prime or not ---------------
+    // int n;
+    // cout<<"Enter a number: ";
+    // cin>>n;
+
+    // if(isPrime(n))
+    //     cout<<"It is a prime number"<<endl;
+    // else
+    //     cout<<"It is not a prime number"<<endl;
+
+    // ---------------- factorial of a number -------------
+    // int n;
+    // cout<<"Enter a number: ";
+    // cin>>n;
+
+    // int ans = factorial(n);
+    // cout<<"Factorial of "<<n<<" is "<<ans<<endl;
+
+    // ---------------- even or odd -----------------------
+    // int n;
+    // cout<<"Enter a number: ";
+    // cin>>n;
+
+    // if(evenOdd(n))
+    //     cout<<"Even number"<<endl;
+    // else
+    //     cout<<"Odd number"<<endl;
+
+    // ---------------- area of circle --------------------
+    // int r;
+    // cout<<"Enter the radius of the circle: ";
+    // cin>>r;
+
+    // double ans = areaCircle(r);
+    // cout<<"Area of circle with radius "<<r<<" is "<<ans<<endl;
+
+    // ---------------- sum of even numbers till N --------
+    // int n;
+    // cout<<"Enter the value of n: ";
+    // cin>>n;
+
+    // int ans = evenSum(n);
+    // cout<<"Even sum is "<<ans<<endl;
 
     // ---------------- sum of N numbers ------------------
     // int n;
