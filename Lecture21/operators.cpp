@@ -5,8 +5,29 @@ using namespace std;
 // using global variables are bad practice
 // int raja = 420;
 
-int main()
-{
+int main(){
+
+    // -------------- switch-case -----------------------------
+    // we cannot use continue with a switch case statement
+    int val;
+    cin>>val;
+
+    switch (val){
+        case 1: cout<<"Love";
+        break;
+
+        case 2: cout<<"Ishav";
+        break;
+
+        case 3: cout<<"Ramesh";
+        break;
+
+        case 4: cout<<"Vijay";
+        break;    
+    
+        default: cout<<"Ajay";
+    }
+
     // -------------- variable scoping ------------------------
     // local variables
 
