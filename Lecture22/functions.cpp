@@ -96,16 +96,22 @@ double areaCircle(int rad){
     return area;
 }
 
-bool evenOdd(int num){
-    if(num%2==0){
+bool isEven(int num){
+    // if(num%2==0){
+    //     return 1;
+    // }
+    // return 0;
+
+    //another approach
+    if((num&1)==0)
         return 1;
-    }
-    return 0;
+    else
+        return 0; 
 }
 
-int factorial(int num){
-    cout<<num<<endl;
-    int fact = 1;
+// we are using long long int because for large number int will not able to store the multiplication
+long long int factorial(long long int num){
+    long long int fact = 1;
 
     for(int i=1; i<=num; i++){
         fact*=i;
@@ -115,45 +121,69 @@ int factorial(int num){
 }
 
 bool isPrime(int num){
+    // if(num==0 || num==1){
+    //     return 0;
+    // }
+
+    // for(int i=2; i<num; i++){
+    //     if(num%i==0){
+    //         return 0;
+    //     }
+    // }
+    // return 1;
+
+    // optimized solution
     if(num==0 || num==1){
         return 0;
     }
 
-    for(int i=2; i<num; i++){
+    for(int i=2; i<=sqrt(num); i++){
         if(num%i==0){
             return 0;
         }
     }
     return 1;
+
+
 }
 int main(){
 
-    // ---------------- print all prime nos from 1 to N ---------------
-    int n;
-    cout<<"Enter a number: ";
-    cin>>n;
-
-    for(int i=1; i<=n; i++){
-        if(isPrime(i))
-            cout<<i<<" ";
-    }
-
-    // ---------------- num is prime or not ---------------
+    // ---------------- even odd another approach ---------------------
     // int n;
     // cout<<"Enter a number: ";
     // cin>>n;
 
-    // if(isPrime(n))
-    //     cout<<"It is a prime number"<<endl;
+    // if(isEven(n))
+    //     cout<<"Even number"<<endl;
     // else
-    //     cout<<"It is not a prime number"<<endl;
+    //     cout<<"Odd number"<<endl;
+
+    // ---------------- print all prime nos from 1 to N ---------------
+    // int n;
+    // cout<<"Enter a number: ";
+    // cin>>n;
+
+    // for(int i=2; i<=n; i++){
+    //     if(isPrime(i))
+    //         cout<<i<<" ";
+    // }
+
+    // ---------------- num is prime or not ---------------
+    int n;
+    cout<<"Enter a number: ";
+    cin>>n;
+
+    if(isPrime(n))
+        cout<<"It is a prime number"<<endl;
+    else
+        cout<<"It is not a prime number"<<endl;
 
     // ---------------- factorial of a number -------------
     // int n;
     // cout<<"Enter a number: ";
     // cin>>n;
 
-    // int ans = factorial(n);
+    // long long int ans = factorial(n);
     // cout<<"Factorial of "<<n<<" is "<<ans<<endl;
 
     // ---------------- even or odd -----------------------
@@ -161,7 +191,7 @@ int main(){
     // cout<<"Enter a number: ";
     // cin>>n;
 
-    // if(evenOdd(n))
+    // if(isEven(n))
     //     cout<<"Even number"<<endl;
     // else
     //     cout<<"Odd number"<<endl;
