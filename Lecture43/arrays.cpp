@@ -1,7 +1,26 @@
 #include<iostream>
 using namespace std;
 
+void printArray(int arr[], int size){
+    for(int i=0; i<size; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+
+void inc(int arr[], int size){
+    arr[0]+=10;
+    printArray(arr, size);
+}
+
 int main(){
+
+    // ---------------- pass by reference -----------
+    int arr[] = {5, 6};
+    int size = 2;
+
+    inc(arr, size);
+    printArray(arr, size);
 
     // // --------------- in class task -------------
     // // create an array of size 53
@@ -96,16 +115,16 @@ int main(){
     // }
 
     // --------- initialising all value with 0 in array ----
-    int arr[10] = {0};
-    for(int i=0; i<10; i++){
-        cout<<arr[i]<<" "; 
-    }cout<<endl;
+    // int arr[10] = {0};
+    // for(int i=0; i<10; i++){
+    //     cout<<arr[i]<<" "; 
+    // }cout<<endl;
 
-    // it will only set 0 or -1 for all values in int not for any other values
-    memset(arr, -1, sizeof(arr));
-    for(int i=0; i<10; i++){
-        cout<<arr[i]<<" "; 
-    }
+    // // it will only set 0 or -1 for all values in int not for any other values
+    // memset(arr, -1, sizeof(arr));
+    // for(int i=0; i<10; i++){
+    //     cout<<arr[i]<<" "; 
+    // }
 
  return 0;
 }
