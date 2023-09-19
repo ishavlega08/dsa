@@ -1,7 +1,8 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
-void wavePrintMatrix(vector<vector<int>> v){
+void wavePrintMatrixCol(vector<vector<int>> v){
     int rowSize = v.size();
     int colSize = v[0].size();
 
@@ -20,6 +21,25 @@ void wavePrintMatrix(vector<vector<int>> v){
     }
 }
 
+void wavePrintMatrixRow(vector<vector<int>> v){
+    int rowSize = v.size();
+    int colSize = v[0].size();
+
+    for(int row=0; row<rowSize; row++){
+        // even no of column -> Top to bottom
+        if((row&1) == 0){
+            for(int col = 0; col<colSize; col++){
+                cout<<v[row][col]<<" ";
+            }
+        }
+        else{
+            for(int col=colSize-1; col>=0; col--){
+                cout<<v[row][col]<<" ";
+            }
+        }
+    }
+}
+
 int main(){
 
     vector<vector<int> > v{
@@ -28,7 +48,9 @@ int main(){
         {9, 10, 11, 12}
     };
 
-    wavePrintMatrix(v);
+    wavePrintMatrixCol(v);
+    cout<<endl;
+    wavePrintMatrixRow(v);
 
     return 0;
 }
